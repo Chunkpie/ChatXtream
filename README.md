@@ -136,6 +136,19 @@ Deploying your own ChatXtream instance ensures you don't have to trust anyone el
    ```
    *The frontend will be available at `http://localhost:5173`.*
 
+### Running via Docker (Easiest)
+
+If you have Docker and Docker Compose installed, you can spin up the entire stack with a single command:
+
+```bash
+git clone https://github.com/yourusername/ChatXtream.git
+cd ChatXtream
+docker-compose up -d --build
+```
+
+- **Frontend** will be available at `http://localhost:8080`
+- **Backend Relay** will run at `http://localhost:3000`
+
 ### Deploying to Production
 
 **1. The Frontend (Vercel, Netlify, GitHub Pages)**
