@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>ChatXtream 🕵️‍♂️💬</h1>
+  <h1>ChatXtream</h1>
 
   <p><strong>An open-source anonymity-first chat platform built for privacy — runs fully decentralized, or with self-hosted relays for persistent delivery.</strong></p>
   
@@ -17,22 +17,22 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-- [🎯 Why ChatXtream?](#-why-chatxtream)
-- [✨ Key Features](#-key-features)
-- [🛡️ Threat Model & Guarantees](#-threat-model--guarantees)
-- [🧠 How It Works (The Protocol)](#-how-it-works-the-protocol)
-- [🚀 Quick Start (For Users)](#-quick-start-for-users)
-- [💻 Hosting & Deployment (For Admins)](#-hosting--deployment-for-admins)
+- [Why ChatXtream?](#why-chatxtream)
+- [Key Features](#key-features)
+- [Threat Model & Guarantees](#threat-model--guarantees)
+- [How It Works (The Protocol)](#how-it-works-the-protocol)
+- [Quick Start (For Users)](#quick-start-for-users)
+- [Hosting & Deployment (For Admins)](#hosting--deployment-for-admins)
   - [Running Locally](#running-locally)
   - [Deploying to Production](#deploying-to-production)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## 🎯 Why ChatXtream?
+## Why ChatXtream?
 
 Traditional "secure" messengers often protect the *content* of your messages (via End-to-End Encryption) but drastically fail to protect your **metadata**. They know who you are, when you are online, and exactly who you are messaging. 
 
@@ -43,18 +43,18 @@ ChatXtream is built for scenarios where absolute metadata privacy is a requireme
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-*   🚫 **Zero Accounts:** Identity is generated entirely on your device using cryptographic keypairs (`libsodium`).
-*   🥷 **Sealed Sender Protocol:** The relay server routes messages using ephemeral tokens. It never knows the true identity of the sender or the recipient.
-*   🧠 **Stateless Relay:** The backend has no database. It only holds encrypted messages in RAM for offline users, deleting them automatically after a 24-hour TTL.
-*   🔐 **End-to-End Encrypted (E2EE):** All messages are encrypted locally using `Curve25519` before ever touching the network.
-*   🛑 **No IP Tracking:** Rate-limiting and routing are completely decoupled from IP addresses.
-*   🌐 **Self-Hostable:** Deploy the backend anywhere. It costs virtually nothing to run and can be hidden behind Tor or Cloudflare.
+*   **Zero Accounts:** Identity is generated entirely on your device using cryptographic keypairs (`libsodium`).
+*   **Sealed Sender Protocol:** The relay server routes messages using ephemeral tokens. It never knows the true identity of the sender or the recipient.
+*   **Stateless Relay:** The backend has no database. It only holds encrypted messages in RAM for offline users, deleting them automatically after a 24-hour TTL.
+*   **End-to-End Encrypted (E2EE):** All messages are encrypted locally using `Curve25519` before ever touching the network.
+*   **No IP Tracking:** Rate-limiting and routing are completely decoupled from IP addresses.
+*   **Self-Hostable:** Deploy the backend anywhere. It costs virtually nothing to run and can be hidden behind Tor or Cloudflare.
 
 ---
 
-## 🛡️ Threat Model & Guarantees
+## Threat Model & Guarantees
 
 Transparency is critical for anonymity tools. Here is exactly what ChatXtream protects against, and what it does *not*.
 
@@ -65,11 +65,11 @@ Transparency is critical for anonymity tools. Here is exactly what ChatXtream pr
 | **Compromised Recipient Device** | Their own message history | **Nothing** — device security is out of scope. If your friend's phone is hacked, the chat is compromised. |
 | **Legal/Subpoena Request** | Whatever the server stores | **Minimized** by storing *no* plaintext metadata and writing *nothing* to disk. |
 
-> **⚠️ Disclaimer:** ChatXtream aims to be meaningfully better than standard E2EE messengers regarding metadata. However, it does not currently claim to defeat global nation-state adversaries monitoring all global network timing (e.g., NSA). For life-or-death anonymity, use Tor/Tails.
+> **Disclaimer:** ChatXtream aims to be meaningfully better than standard E2EE messengers regarding metadata. However, it does not currently claim to defeat global nation-state adversaries monitoring all global network timing (e.g., NSA). For life-or-death anonymity, use Tor/Tails.
 
 ---
 
-## 🧠 How It Works (The Protocol)
+## How It Works (The Protocol)
 
 ChatXtream's architecture is split into a **Client** (Vanilla TypeScript/Svelte) and a **Relay** (Node.js/WebSocket).
 
@@ -92,7 +92,7 @@ When you send a message to a contact:
 
 ---
 
-## 🚀 Quick Start (For Users)
+## Quick Start (For Users)
 
 Want to just use the app? If an instance is already hosted, follow these steps:
 
@@ -103,7 +103,7 @@ Want to just use the app? If an instance is already hosted, follow these steps:
 
 ---
 
-## 💻 Hosting & Deployment (For Admins)
+## Hosting & Deployment (For Admins)
 
 Deploying your own ChatXtream instance ensures you don't have to trust anyone else's relay server. The stack is incredibly lightweight.
 
@@ -165,7 +165,7 @@ Deploy the `backend` folder to any Node.js environment. Because it uses no datab
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 ChatXtream is an open-source privacy initiative. Contributions, bug reports, and security audits are highly encouraged!
 
@@ -179,7 +179,7 @@ Please see `CONTRIBUTING.md` for guidelines on how to submit pull requests.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
