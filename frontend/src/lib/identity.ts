@@ -38,7 +38,7 @@ export const initIdentityStore = async () => {
 };
 
 export const createIdentity = async (passphrase: string) => {
-    const salt = sodium.randombytes_buf(sodium.crypto_pwhash_SALTBYTES);
+    const salt = sodium.randombytes_buf(sodium.crypto_generichash_KEYBYTES);
     const key = await deriveStorageKey(passphrase, salt);
     
     const identity = generateIdentity();

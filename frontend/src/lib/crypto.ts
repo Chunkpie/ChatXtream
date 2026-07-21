@@ -9,13 +9,11 @@ export const initCrypto = async () => {
 
 // Derive a 32-byte key from a user passphrase for local storage encryption
 export const deriveStorageKey = async (passphrase: string, salt: Uint8Array): Promise<Uint8Array> => {
-    return sodium.crypto_pwhash(
+    // Using generichash (Blake2b) because the lite build of libsodium-wrappers omits crypto_pwhash (Argon2id)
+    return sodium.crypto_generichash(
         sodium.crypto_secretbox_KEYBYTES,
         passphrase,
-        salt,
-        sodium.crypto_pwhash_OPSLIMIT_INTERACTIVE,
-        sodium.crypto_pwhash_MEMLIMIT_INTERACTIVE,
-        sodium.crypto_pwhash_ALG_ARGON2ID13
+        salt
     );
 };
 
