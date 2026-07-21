@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="logo.jpg" alt="ChatXtream Logo" width="150" style="border-radius: 20%; margin-bottom: 20px;" />
   <h1>ChatXtream</h1>
 
   <p><strong>An open-source anonymity-first chat platform built for privacy — runs fully decentralized, or with self-hosted relays for persistent delivery.</strong></p>
