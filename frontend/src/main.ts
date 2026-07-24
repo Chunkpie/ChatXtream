@@ -42,7 +42,7 @@ const render = () => {
                     <div style="margin-top: 2rem;">
                         <h3>New Chat</h3>
                         <input type="text" id="contact-fingerprint" placeholder="Paste Contact Fingerprint" value="${activeContactFingerprint}" />
-                        <button id="start-chat">Connect</button>
+                        <button id="start-chat" class="solid">Connect</button>
                     </div>
                 </div>
                 
@@ -62,7 +62,7 @@ const render = () => {
                     
                     <form id="send-form" class="chat-input" ${!activeContactFingerprint ? 'style="display:none;"' : ''}>
                         <input type="text" id="msg-input" placeholder="Type a message..." required autocomplete="off" />
-                        <button type="submit">Send</button>
+                        <button type="submit" class="solid">Send</button>
                     </form>
                 </div>
             </div>
@@ -126,7 +126,7 @@ const render = () => {
                 <form id="unlock-form" class="card">
                     <p>Enter your passphrase to decrypt your local keys.</p>
                     <input type="password" id="passphrase" placeholder="Passphrase" required />
-                    <button type="submit">Unlock</button>
+                    <button type="submit" class="solid">Unlock</button>
                     <p id="error-msg" class="error"></p>
                 </form>
             </div>
@@ -155,7 +155,7 @@ const render = () => {
                     <strong>Warning:</strong> If you lose this passphrase, your identity cannot be recovered.
                 </div>
                 <input type="password" id="passphrase" placeholder="Choose a strong passphrase" required minlength="8" />
-                <button type="submit">Generate Keys</button>
+                <button type="submit" class="solid">Generate Keys</button>
             </form>
         </div>
     `;

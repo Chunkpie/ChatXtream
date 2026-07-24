@@ -13,6 +13,7 @@ class RelayClient {
         this.identity = identity;
         this.messageHandler = onMessage;
         this.connect();
+        this.startChaffing();
     }
 
     private connect() {
@@ -65,6 +66,20 @@ class RelayClient {
             deliveryToken: targetDeliveryToken,
             envelope: envelopeBase64
         }));
+    }
+
+    private startChaffing() {
+        // Send a random 2KB string every 15 seconds to defeat timing analysis
+        setInterval(() => {
+            if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+                // Generate deterministic length dummy data
+                const dummyPadding = "X".repeat(2048); 
+                this.ws.send(JSON.stringify({
+                    type: 'chaff',
+                    padding: dummyPadding
+                }));
+            }
+        }, 15000);
     }
 }
 

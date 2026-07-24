@@ -44,7 +44,16 @@ export const createSealedEnvelope = (identity: IdentityKeys, recipientFingerprin
         timestamp: Date.now()
     };
     
-    const payloadJson = JSON.stringify(payload);
+    let payloadJson = JSON.stringify(payload);
+    
+    // Traffic Padding: Ensure all payloads are exactly 2048 characters to defeat size-based metadata analysis
+    const TARGET_LENGTH = 2048;
+    if (payloadJson.length < TARGET_LENGTH) {
+        payloadJson = payloadJson.padEnd(TARGET_LENGTH, ' ');
+    } else if (payloadJson.length > TARGET_LENGTH) {
+        throw new Error("Message too long");
+    }
+    
     
     // Sign the payload using our signing key
     const signature = sodium.crypto_sign_detached(
